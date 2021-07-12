@@ -1,0 +1,32 @@
+{
+    "name": "incenteev/emoji-pattern",
+    "description": "PHP regexp pattern matching Unicode emojis",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "ext-mbstring": "*",
+        "phpunit/phpunit": "^9.5",
+        "symfony/http-client": "^5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Incenteev\\EmojiPattern\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Incenteev\\EmojiPattern\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Christophe Coevoet",
+            "email": "stof@notk.org"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    }
+}
