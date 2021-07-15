@@ -109,9 +109,8 @@ final class EmojiPattern
         // "Presentation" characters are rendered as emoji by default and need no variant.
         \$emojiPresentation = implode('|', self::EMOJI_PRESENTATION_PATTERNS);
 
-        // Some other emoji are sequences of characters, joined with "Zero Width Joiner"
-        // characters. We want the longest match, so we sort these in reverse order.
-        \$zwjSequences = implode('|', array_reverse(self::ZWJ_SEQUENCE_PATTERNS));
+        // Some other emoji are sequences of characters.
+        \$zwjSequences = implode('|', self::ZWJ_SEQUENCE_PATTERNS);
         \$otherSequences = implode('|', self::SEQUENCE_PATTERNS);
 
         return self::\$emojiPattern = '(?:(?:'.\$zwjSequences.'|'.\$otherSequences.'|'.\$emojiVariants.'|'.\$emojiPresentation.')(?:'.\$combiningMarks.')?)';
@@ -139,14 +138,17 @@ function parseFile(string $fileContent): array
 
         $emojis[] = [
             'codepoints' => trim($match[1]),
+            // Count the number of different codepoints involved in the sequence
+            'length' => substr_count(trim($match[1]), ' ') + 1,
             'pattern' => buildPattern(trim($match[1])),
             'property' => trim($match[2]),
             'comment' => trim($match[3]),
         ];
     }
 
+    // Sort longer sequences first, so that we get the longer match. The secondary sort by codepoints allows a deterministic code generation.
     usort($emojis, function (array $a, array $b) {
-        return $a['codepoints'] <=> $b['codepoints'];
+        return [$b['length'], $a['codepoints']] <=> [$a['length'], $b['codepoints']];
     });
 
     return $emojis;

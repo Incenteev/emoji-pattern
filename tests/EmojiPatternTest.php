@@ -13,6 +13,7 @@ class EmojiPatternTest extends TestCase
     public function testMatchEmoji(string $emoji)
     {
         $this->assertTrue(preg_match(self::getSingleEmojiRegexp(), $emoji) === 1);
+        $this->assertEquals('x', preg_replace(self::getEmojiRegexp(), 'x', $emoji), 'Emojis must be matched without splitting them.');
     }
 
     public static function provideEmojis(): iterable
@@ -25,6 +26,9 @@ class EmojiPatternTest extends TestCase
         yield ['👫🏼'];
         yield ['🏳️‍🌈'];
         yield ['🐻‍❄️'];
+        yield ['✊🏽'];
+        yield ['✋🏾'];
+        yield ['👨‍👧‍👦'];
     }
 
     /**
@@ -40,6 +44,11 @@ class EmojiPatternTest extends TestCase
         yield ['0'];
         yield ['1'];
         yield ['🐻❄']; // multiple emojis without the ZWJ
+    }
+
+    private static function getEmojiRegexp(): string
+    {
+        return '/' . EmojiPattern::getEmojiPattern() . '/u';
     }
 
     private static function getSingleEmojiRegexp(): string
