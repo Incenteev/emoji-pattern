@@ -20,6 +20,10 @@ $responses = [
 $emojis = parseFile($responses['emoji-data.txt']->getContent());
 $patterns = array_filter($emojis, function (array $emoji): bool  { return $emoji['property'] === 'Emoji'; });
 $presentationPatterns = array_filter($emojis, function (array $emoji): bool  { return $emoji['property'] === 'Emoji_Presentation'; });
+$presentationPatternRegexps = array_column($presentationPatterns, 'pattern');
+$nonPresentationPatterns = array_filter($patterns, function (array $emoji) use ($presentationPatternRegexps): bool {
+    return !in_array($emoji['pattern'], $presentationPatternRegexps);
+});
 
 unset($emojis);
 
@@ -33,6 +37,7 @@ if (!preg_match('#https://www\.unicode.org/Public/emoji/([^/]++)/emoji-sequences
 $emojiVersion = $match[1];
 
 $patternLines = renderPatternLines($patterns);
+$nonPresentationPatternLines = renderPatternLines($nonPresentationPatterns);
 $presentationPatternLines = renderPatternLines($presentationPatterns);
 $sequencePatternLines = renderPatternLines($sequencePatterns);
 $zeroWidthJoinerSequencePatternLines = renderPatternLines($zeroWidthJoinerSequencePatterns);
@@ -50,12 +55,12 @@ namespace Incenteev\EmojiPattern;
 final class EmojiPattern
 {
     /**
-     * Patterns that match characters in the "Emoji" group. Note that characters in this group are
-     * (confusingly) not rendered as Emoji by default. They must be followed by the U+FE0F (variant
+     * Patterns that match characters in the "Emoji" group but not in "Emoji Presentation" group.
+     * Those are not rendered as Emoji by default. They must be followed by the U+FE0F (variant
      * selector) character to be rendered as Emoji.
      */
-    private const EMOJI_PATTERNS = [
-        $patternLines
+    private const EMOJI_NON_PRESENTATION_PATTERNS = [
+        $nonPresentationPatternLines
     ];
 
     /**
@@ -99,8 +104,8 @@ final class EmojiPattern
             return self::\$emojiPattern;
         }
 
-        // The "emoji" group needs to be followed by a special character to be rendered like emoji.
-        \$emojiVariants = '(?:'.implode('|', self::EMOJI_PATTERNS).')\x{FE0F}';
+        // The non-"Presentation" group needs to be followed by a special character to be rendered like emoji.
+        \$emojiVariants = '(?:'.implode('|', self::EMOJI_NON_PRESENTATION_PATTERNS).')\x{FE0F}';
 
         // Emoji can be followed by optional combining marks. The standard
         // says only keycaps and backslash are likely to be supported.
