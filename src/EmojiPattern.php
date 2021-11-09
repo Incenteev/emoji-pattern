@@ -5,7 +5,7 @@ namespace Incenteev\EmojiPattern;
 /**
  * Pattern for matching emojis
  *
- * This file is generated from Unicode Emoji 13.1.
+ * This file is generated from Unicode Emoji 14.0.
  */
 final class EmojiPattern
 {
@@ -15,7 +15,7 @@ final class EmojiPattern
      * selector) character to be rendered as Emoji.
      */
     private const EMOJI_NON_PRESENTATION_PATTERNS = [
-        '\\x{0023}', // E0.0   [1] (#️)       number sign
+        '\\x{0023}', // E0.0   [1] (#️)       hash sign
         '\\x{002A}', // E0.0   [1] (*️)       asterisk
         '[\\x{0030}-\\x{0039}]', // E0.0  [10] (0️..9️)    digit zero..digit nine
         '\\x{00A9}', // E0.6   [1] (©️)       copyright
@@ -237,7 +237,7 @@ final class EmojiPattern
         '\\x{1F509}', // E1.0   [1] (🔉)       speaker medium volume
         '[\\x{1F50A}-\\x{1F514}]', // E0.6  [11] (🔊..🔔)    speaker high volume..bell
         '\\x{1F515}', // E1.0   [1] (🔕)       bell with slash
-        '[\\x{1F516}-\\x{1F52B}]', // E0.6  [22] (🔖..🔫)    bookmark..pistol
+        '[\\x{1F516}-\\x{1F52B}]', // E0.6  [22] (🔖..🔫)    bookmark..water pistol
         '[\\x{1F52C}-\\x{1F52D}]', // E1.0   [2] (🔬..🔭)    microscope..telescope
         '[\\x{1F52E}-\\x{1F53D}]', // E0.6  [16] (🔮..🔽)    crystal ball..downwards button
         '[\\x{1F54B}-\\x{1F54E}]', // E1.0   [4] (🕋..🕎)    kaaba..menorah
@@ -273,7 +273,7 @@ final class EmojiPattern
         '[\\x{1F62E}-\\x{1F62F}]', // E1.0   [2] (😮..😯)    face with open mouth..hushed face
         '[\\x{1F630}-\\x{1F633}]', // E0.6   [4] (😰..😳)    anxious face with sweat..flushed face
         '\\x{1F634}', // E1.0   [1] (😴)       sleeping face
-        '\\x{1F635}', // E0.6   [1] (😵)       dizzy face
+        '\\x{1F635}', // E0.6   [1] (😵)       face with crossed-out eyes
         '\\x{1F636}', // E1.0   [1] (😶)       face without mouth
         '[\\x{1F637}-\\x{1F640}]', // E0.6  [10] (😷..🙀)    face with medical mask..weary cat
         '[\\x{1F641}-\\x{1F644}]', // E1.0   [4] (🙁..🙄)    slightly frowning face..face with rolling eyes
@@ -318,6 +318,7 @@ final class EmojiPattern
         '[\\x{1F6D1}-\\x{1F6D2}]', // E3.0   [2] (🛑..🛒)    stop sign..shopping cart
         '\\x{1F6D5}', // E12.0  [1] (🛕)       hindu temple
         '[\\x{1F6D6}-\\x{1F6D7}]', // E13.0  [2] (🛖..🛗)    hut..elevator
+        '[\\x{1F6DD}-\\x{1F6DF}]', // E14.0  [3] (🛝..🛟)    playground slide..ring buoy
         '[\\x{1F6EB}-\\x{1F6EC}]', // E1.0   [2] (🛫..🛬)    airplane departure..airplane arrival
         '[\\x{1F6F4}-\\x{1F6F6}]', // E3.0   [3] (🛴..🛶)    kick scooter..canoe
         '[\\x{1F6F7}-\\x{1F6F8}]', // E5.0   [2] (🛷..🛸)    sled..flying saucer
@@ -325,6 +326,7 @@ final class EmojiPattern
         '\\x{1F6FA}', // E12.0  [1] (🛺)       auto rickshaw
         '[\\x{1F6FB}-\\x{1F6FC}]', // E13.0  [2] (🛻..🛼)    pickup truck..roller skate
         '[\\x{1F7E0}-\\x{1F7EB}]', // E12.0 [12] (🟠..🟫)    orange circle..brown square
+        '\\x{1F7F0}', // E14.0  [1] (🟰)       heavy equals sign
         '\\x{1F90C}', // E13.0  [1] (🤌)       pinched fingers
         '[\\x{1F90D}-\\x{1F90F}]', // E12.0  [3] (🤍..🤏)    white heart..pinching hand
         '[\\x{1F910}-\\x{1F918}]', // E1.0   [9] (🤐..🤘)    zipper-mouth face..sign of the horns
@@ -348,6 +350,7 @@ final class EmojiPattern
         '\\x{1F972}', // E13.0  [1] (🥲)       smiling face with tear
         '[\\x{1F973}-\\x{1F976}]', // E11.0  [4] (🥳..🥶)    partying face..cold face
         '[\\x{1F977}-\\x{1F978}]', // E13.0  [2] (🥷..🥸)    ninja..disguised face
+        '\\x{1F979}', // E14.0  [1] (🥹)       face holding back tears
         '\\x{1F97A}', // E11.0  [1] (🥺)       pleading face
         '\\x{1F97B}', // E12.0  [1] (🥻)       sari
         '[\\x{1F97C}-\\x{1F97F}]', // E11.0  [4] (🥼..🥿)    lab coat..flat shoe
@@ -365,19 +368,27 @@ final class EmojiPattern
         '[\\x{1F9C1}-\\x{1F9C2}]', // E11.0  [2] (🧁..🧂)    cupcake..salt
         '[\\x{1F9C3}-\\x{1F9CA}]', // E12.0  [8] (🧃..🧊)    beverage box..ice
         '\\x{1F9CB}', // E13.0  [1] (🧋)       bubble tea
+        '\\x{1F9CC}', // E14.0  [1] (🧌)       troll
         '[\\x{1F9CD}-\\x{1F9CF}]', // E12.0  [3] (🧍..🧏)    person standing..deaf person
         '[\\x{1F9D0}-\\x{1F9E6}]', // E5.0  [23] (🧐..🧦)    face with monocle..socks
         '[\\x{1F9E7}-\\x{1F9FF}]', // E11.0 [25] (🧧..🧿)    red envelope..nazar amulet
         '[\\x{1FA70}-\\x{1FA73}]', // E12.0  [4] (🩰..🩳)    ballet shoes..shorts
         '\\x{1FA74}', // E13.0  [1] (🩴)       thong sandal
         '[\\x{1FA78}-\\x{1FA7A}]', // E12.0  [3] (🩸..🩺)    drop of blood..stethoscope
+        '[\\x{1FA7B}-\\x{1FA7C}]', // E14.0  [2] (🩻..🩼)    x-ray..crutch
         '[\\x{1FA80}-\\x{1FA82}]', // E12.0  [3] (🪀..🪂)    yo-yo..parachute
         '[\\x{1FA83}-\\x{1FA86}]', // E13.0  [4] (🪃..🪆)    boomerang..nesting dolls
         '[\\x{1FA90}-\\x{1FA95}]', // E12.0  [6] (🪐..🪕)    ringed planet..banjo
         '[\\x{1FA96}-\\x{1FAA8}]', // E13.0 [19] (🪖..🪨)    military helmet..rock
+        '[\\x{1FAA9}-\\x{1FAAC}]', // E14.0  [4] (🪩..🪬)    mirror ball..hamsa
         '[\\x{1FAB0}-\\x{1FAB6}]', // E13.0  [7] (🪰..🪶)    fly..feather
+        '[\\x{1FAB7}-\\x{1FABA}]', // E14.0  [4] (🪷..🪺)    lotus..nest with eggs
         '[\\x{1FAC0}-\\x{1FAC2}]', // E13.0  [3] (🫀..🫂)    anatomical heart..people hugging
+        '[\\x{1FAC3}-\\x{1FAC5}]', // E14.0  [3] (🫃..🫅)    pregnant man..person with crown
         '[\\x{1FAD0}-\\x{1FAD6}]', // E13.0  [7] (🫐..🫖)    blueberries..teapot
+        '[\\x{1FAD7}-\\x{1FAD9}]', // E14.0  [3] (🫗..🫙)    pouring liquid..jar
+        '[\\x{1FAE0}-\\x{1FAE7}]', // E14.0  [8] (🫠..🫧)    melting face..bubbles
+        '[\\x{1FAF0}-\\x{1FAF6}]', // E14.0  [7] (🫰..🫶)    hand with index finger and thumb crossed..heart hands
         '[\\x{231A}-\\x{231B}]', // E0.6   [2] (⌚..⌛)    watch..hourglass done
         '[\\x{23E9}-\\x{23EC}]', // E0.6   [4] (⏩..⏬)    fast-forward button..fast down button
         '\\x{23F0}', // E0.6   [1] (⏰)       alarm clock
@@ -403,8 +414,8 @@ final class EmojiPattern
         '\\x{2728}', // E0.6   [1] (✨)       sparkles
         '\\x{274C}', // E0.6   [1] (❌)       cross mark
         '\\x{274E}', // E0.6   [1] (❎)       cross mark button
-        '[\\x{2753}-\\x{2755}]', // E0.6   [3] (❓..❕)    question mark..white exclamation mark
-        '\\x{2757}', // E0.6   [1] (❗)       exclamation mark
+        '[\\x{2753}-\\x{2755}]', // E0.6   [3] (❓..❕)    red question mark..white exclamation mark
+        '\\x{2757}', // E0.6   [1] (❗)       red exclamation mark
         '[\\x{2795}-\\x{2797}]', // E0.6   [3] (➕..➗)    plus..divide
         '\\x{27B0}', // E0.6   [1] (➰)       curly loop
         '\\x{27BF}', // E1.0   [1] (➿)       double curly loop
@@ -1165,6 +1176,11 @@ final class EmojiPattern
         '\\x{1F91C}\\x{1F3FD}', // E3.0   [1] (🤜🏽)
         '\\x{1F91C}\\x{1F3FE}', // E3.0   [1] (🤜🏾)
         '\\x{1F91C}\\x{1F3FF}', // E3.0   [1] (🤜🏿)
+        '\\x{1F91D}\\x{1F3FB}', // E3.0   [1] (🤝🏻)
+        '\\x{1F91D}\\x{1F3FC}', // E3.0   [1] (🤝🏼)
+        '\\x{1F91D}\\x{1F3FD}', // E3.0   [1] (🤝🏽)
+        '\\x{1F91D}\\x{1F3FE}', // E3.0   [1] (🤝🏾)
+        '\\x{1F91D}\\x{1F3FF}', // E3.0   [1] (🤝🏿)
         '\\x{1F91E}\\x{1F3FB}', // E3.0   [1] (🤞🏻)
         '\\x{1F91E}\\x{1F3FC}', // E3.0   [1] (🤞🏼)
         '\\x{1F91E}\\x{1F3FD}', // E3.0   [1] (🤞🏽)
@@ -1350,6 +1366,56 @@ final class EmojiPattern
         '\\x{1F9DD}\\x{1F3FD}', // E5.0   [1] (🧝🏽)
         '\\x{1F9DD}\\x{1F3FE}', // E5.0   [1] (🧝🏾)
         '\\x{1F9DD}\\x{1F3FF}', // E5.0   [1] (🧝🏿)
+        '\\x{1FAC3}\\x{1F3FB}', // E14.0  [1] (🫃🏻)
+        '\\x{1FAC3}\\x{1F3FC}', // E14.0  [1] (🫃🏼)
+        '\\x{1FAC3}\\x{1F3FD}', // E14.0  [1] (🫃🏽)
+        '\\x{1FAC3}\\x{1F3FE}', // E14.0  [1] (🫃🏾)
+        '\\x{1FAC3}\\x{1F3FF}', // E14.0  [1] (🫃🏿)
+        '\\x{1FAC4}\\x{1F3FB}', // E14.0  [1] (🫄🏻)
+        '\\x{1FAC4}\\x{1F3FC}', // E14.0  [1] (🫄🏼)
+        '\\x{1FAC4}\\x{1F3FD}', // E14.0  [1] (🫄🏽)
+        '\\x{1FAC4}\\x{1F3FE}', // E14.0  [1] (🫄🏾)
+        '\\x{1FAC4}\\x{1F3FF}', // E14.0  [1] (🫄🏿)
+        '\\x{1FAC5}\\x{1F3FB}', // E14.0  [1] (🫅🏻)
+        '\\x{1FAC5}\\x{1F3FC}', // E14.0  [1] (🫅🏼)
+        '\\x{1FAC5}\\x{1F3FD}', // E14.0  [1] (🫅🏽)
+        '\\x{1FAC5}\\x{1F3FE}', // E14.0  [1] (🫅🏾)
+        '\\x{1FAC5}\\x{1F3FF}', // E14.0  [1] (🫅🏿)
+        '\\x{1FAF0}\\x{1F3FB}', // E14.0  [1] (🫰🏻)
+        '\\x{1FAF0}\\x{1F3FC}', // E14.0 [1] (🫰🏼)
+        '\\x{1FAF0}\\x{1F3FD}', // E14.0  [1] (🫰🏽)
+        '\\x{1FAF0}\\x{1F3FE}', // E14.0  [1] (🫰🏾)
+        '\\x{1FAF0}\\x{1F3FF}', // E14.0  [1] (🫰🏿)
+        '\\x{1FAF1}\\x{1F3FB}', // E14.0  [1] (🫱🏻)
+        '\\x{1FAF1}\\x{1F3FC}', // E14.0  [1] (🫱🏼)
+        '\\x{1FAF1}\\x{1F3FD}', // E14.0  [1] (🫱🏽)
+        '\\x{1FAF1}\\x{1F3FE}', // E14.0  [1] (🫱🏾)
+        '\\x{1FAF1}\\x{1F3FF}', // E14.0  [1] (🫱🏿)
+        '\\x{1FAF2}\\x{1F3FB}', // E14.0  [1] (🫲🏻)
+        '\\x{1FAF2}\\x{1F3FC}', // E14.0  [1] (🫲🏼)
+        '\\x{1FAF2}\\x{1F3FD}', // E14.0  [1] (🫲🏽)
+        '\\x{1FAF2}\\x{1F3FE}', // E14.0  [1] (🫲🏾)
+        '\\x{1FAF2}\\x{1F3FF}', // E14.0  [1] (🫲🏿)
+        '\\x{1FAF3}\\x{1F3FB}', // E14.0  [1] (🫳🏻)
+        '\\x{1FAF3}\\x{1F3FC}', // E14.0  [1] (🫳🏼)
+        '\\x{1FAF3}\\x{1F3FD}', // E14.0  [1] (🫳🏽)
+        '\\x{1FAF3}\\x{1F3FE}', // E14.0  [1] (🫳🏾)
+        '\\x{1FAF3}\\x{1F3FF}', // E14.0  [1] (🫳🏿)
+        '\\x{1FAF4}\\x{1F3FB}', // E14.0  [1] (🫴🏻)
+        '\\x{1FAF4}\\x{1F3FC}', // E14.0  [1] (🫴🏼)
+        '\\x{1FAF4}\\x{1F3FD}', // E14.0  [1] (🫴🏽)
+        '\\x{1FAF4}\\x{1F3FE}', // E14.0  [1] (🫴🏾)
+        '\\x{1FAF4}\\x{1F3FF}', // E14.0  [1] (🫴🏿)
+        '\\x{1FAF5}\\x{1F3FB}', // E14.0  [1] (🫵🏻)
+        '\\x{1FAF5}\\x{1F3FC}', // E14.0  [1] (🫵🏼)
+        '\\x{1FAF5}\\x{1F3FD}', // E14.0  [1] (🫵🏽)
+        '\\x{1FAF5}\\x{1F3FE}', // E14.0  [1] (🫵🏾)
+        '\\x{1FAF5}\\x{1F3FF}', // E14.0  [1] (🫵🏿)
+        '\\x{1FAF6}\\x{1F3FB}', // E14.0  [1] (🫶🏻)
+        '\\x{1FAF6}\\x{1F3FC}', // E14.0  [1] (🫶🏼)
+        '\\x{1FAF6}\\x{1F3FD}', // E14.0  [1] (🫶🏽)
+        '\\x{1FAF6}\\x{1F3FE}', // E14.0  [1] (🫶🏾)
+        '\\x{1FAF6}\\x{1F3FF}', // E14.0  [1] (🫶🏿)
         '\\x{203C}\\x{FE0F}', // E0.6   [1] (‼️)
         '\\x{2049}\\x{FE0F}', // E0.6   [1] (⁉️)
         '\\x{2122}\\x{FE0F}', // E0.6   [1] (™️)
@@ -1655,6 +1721,7 @@ final class EmojiPattern
         '[\\x{1F6D1}-\\x{1F6D2}]', // E3.0   [2] (🛑..🛒)
         '\\x{1F6D5}', // E12.0  [1] (🛕)
         '[\\x{1F6D6}-\\x{1F6D7}]', // E13.0  [2] (🛖..🛗)
+        '[\\x{1F6DD}-\\x{1F6DF}]', // E14.0  [3] (🛝..🛟)
         '[\\x{1F6EB}-\\x{1F6EC}]', // E1.0   [2] (🛫..🛬)
         '[\\x{1F6F4}-\\x{1F6F6}]', // E3.0   [3] (🛴..🛶)
         '[\\x{1F6F7}-\\x{1F6F8}]', // E5.0   [2] (🛷..🛸)
@@ -1662,6 +1729,7 @@ final class EmojiPattern
         '\\x{1F6FA}', // E12.0  [1] (🛺)
         '[\\x{1F6FB}-\\x{1F6FC}]', // E13.0  [2] (🛻..🛼)
         '[\\x{1F7E0}-\\x{1F7EB}]', // E12.0 [12] (🟠..🟫)
+        '\\x{1F7F0}', // E14.0  [1] (🟰)
         '\\x{1F90C}', // E13.0  [1] (🤌)
         '[\\x{1F90D}-\\x{1F90F}]', // E12.0  [3] (🤍..🤏)
         '[\\x{1F910}-\\x{1F918}]', // E1.0   [9] (🤐..🤘)
@@ -1685,6 +1753,7 @@ final class EmojiPattern
         '\\x{1F972}', // E13.0  [1] (🥲)
         '[\\x{1F973}-\\x{1F976}]', // E11.0  [4] (🥳..🥶)
         '[\\x{1F977}-\\x{1F978}]', // E13.0  [2] (🥷..🥸)
+        '\\x{1F979}', // E14.0  [1] (🥹)
         '\\x{1F97A}', // E11.0  [1] (🥺)
         '\\x{1F97B}', // E12.0  [1] (🥻)
         '[\\x{1F97C}-\\x{1F97F}]', // E11.0  [4] (🥼..🥿)
@@ -1702,19 +1771,27 @@ final class EmojiPattern
         '[\\x{1F9C1}-\\x{1F9C2}]', // E11.0  [2] (🧁..🧂)
         '[\\x{1F9C3}-\\x{1F9CA}]', // E12.0  [8] (🧃..🧊)
         '\\x{1F9CB}', // E13.0  [1] (🧋)
+        '\\x{1F9CC}', // E14.0  [1] (🧌)
         '[\\x{1F9CD}-\\x{1F9CF}]', // E12.0  [3] (🧍..🧏)
         '[\\x{1F9D0}-\\x{1F9E6}]', // E5.0  [23] (🧐..🧦)
         '[\\x{1F9E7}-\\x{1F9FF}]', // E11.0 [25] (🧧..🧿)
         '[\\x{1FA70}-\\x{1FA73}]', // E12.0  [4] (🩰..🩳)
         '\\x{1FA74}', // E13.0  [1] (🩴)
         '[\\x{1FA78}-\\x{1FA7A}]', // E12.0  [3] (🩸..🩺)
+        '[\\x{1FA7B}-\\x{1FA7C}]', // E14.0  [2] (🩻..🩼)
         '[\\x{1FA80}-\\x{1FA82}]', // E12.0  [3] (🪀..🪂)
         '[\\x{1FA83}-\\x{1FA86}]', // E13.0  [4] (🪃..🪆)
         '[\\x{1FA90}-\\x{1FA95}]', // E12.0  [6] (🪐..🪕)
         '[\\x{1FA96}-\\x{1FAA8}]', // E13.0 [19] (🪖..🪨)
+        '[\\x{1FAA9}-\\x{1FAAC}]', // E14.0  [4] (🪩..🪬)
         '[\\x{1FAB0}-\\x{1FAB6}]', // E13.0  [7] (🪰..🪶)
+        '[\\x{1FAB7}-\\x{1FABA}]', // E14.0  [4] (🪷..🪺)
         '[\\x{1FAC0}-\\x{1FAC2}]', // E13.0  [3] (🫀..🫂)
+        '[\\x{1FAC3}-\\x{1FAC5}]', // E14.0  [3] (🫃..🫅)
         '[\\x{1FAD0}-\\x{1FAD6}]', // E13.0  [7] (🫐..🫖)
+        '[\\x{1FAD7}-\\x{1FAD9}]', // E14.0  [3] (🫗..🫙)
+        '[\\x{1FAE0}-\\x{1FAE7}]', // E14.0  [8] (🫠..🫧)
+        '[\\x{1FAF0}-\\x{1FAF6}]', // E14.0  [7] (🫰..🫶)
         '[\\x{231A}-\\x{231B}]', // E0.6   [2] (⌚..⌛)
         '[\\x{23E9}-\\x{23EC}]', // E0.6   [4] (⏩..⏬)
         '\\x{23F0}', // E0.6   [1] (⏰)
@@ -2570,6 +2647,26 @@ final class EmojiPattern
         '\\x{1F9DD}\\x{1F3FE}\\x{200D}\\x{2642}\\x{FE0F}', // E5.0   [1] (🧝🏾‍♂️)
         '\\x{1F9DD}\\x{1F3FF}\\x{200D}\\x{2640}\\x{FE0F}', // E5.0   [1] (🧝🏿‍♀️)
         '\\x{1F9DD}\\x{1F3FF}\\x{200D}\\x{2642}\\x{FE0F}', // E5.0   [1] (🧝🏿‍♂️)
+        '\\x{1FAF1}\\x{1F3FB}\\x{200D}\\x{1FAF2}\\x{1F3FC}', // E14.0  [1] (🫱🏻‍🫲🏼)
+        '\\x{1FAF1}\\x{1F3FB}\\x{200D}\\x{1FAF2}\\x{1F3FD}', // E14.0  [1] (🫱🏻‍🫲🏽)
+        '\\x{1FAF1}\\x{1F3FB}\\x{200D}\\x{1FAF2}\\x{1F3FE}', // E14.0  [1] (🫱🏻‍🫲🏾)
+        '\\x{1FAF1}\\x{1F3FB}\\x{200D}\\x{1FAF2}\\x{1F3FF}', // E14.0  [1] (🫱🏻‍🫲🏿)
+        '\\x{1FAF1}\\x{1F3FC}\\x{200D}\\x{1FAF2}\\x{1F3FB}', // E14.0  [1] (🫱🏼‍🫲🏻)
+        '\\x{1FAF1}\\x{1F3FC}\\x{200D}\\x{1FAF2}\\x{1F3FD}', // E14.0  [1] (🫱🏼‍🫲🏽)
+        '\\x{1FAF1}\\x{1F3FC}\\x{200D}\\x{1FAF2}\\x{1F3FE}', // E14.0  [1] (🫱🏼‍🫲🏾)
+        '\\x{1FAF1}\\x{1F3FC}\\x{200D}\\x{1FAF2}\\x{1F3FF}', // E14.0  [1] (🫱🏼‍🫲🏿)
+        '\\x{1FAF1}\\x{1F3FD}\\x{200D}\\x{1FAF2}\\x{1F3FB}', // E14.0  [1] (🫱🏽‍🫲🏻)
+        '\\x{1FAF1}\\x{1F3FD}\\x{200D}\\x{1FAF2}\\x{1F3FC}', // E14.0  [1] (🫱🏽‍🫲🏼)
+        '\\x{1FAF1}\\x{1F3FD}\\x{200D}\\x{1FAF2}\\x{1F3FE}', // E14.0  [1] (🫱🏽‍🫲🏾)
+        '\\x{1FAF1}\\x{1F3FD}\\x{200D}\\x{1FAF2}\\x{1F3FF}', // E14.0  [1] (🫱🏽‍🫲🏿)
+        '\\x{1FAF1}\\x{1F3FE}\\x{200D}\\x{1FAF2}\\x{1F3FB}', // E14.0  [1] (🫱🏾‍🫲🏻)
+        '\\x{1FAF1}\\x{1F3FE}\\x{200D}\\x{1FAF2}\\x{1F3FC}', // E14.0  [1] (🫱🏾‍🫲🏼)
+        '\\x{1FAF1}\\x{1F3FE}\\x{200D}\\x{1FAF2}\\x{1F3FD}', // E14.0  [1] (🫱🏾‍🫲🏽)
+        '\\x{1FAF1}\\x{1F3FE}\\x{200D}\\x{1FAF2}\\x{1F3FF}', // E14.0  [1] (🫱🏾‍🫲🏿)
+        '\\x{1FAF1}\\x{1F3FF}\\x{200D}\\x{1FAF2}\\x{1F3FB}', // E14.0  [1] (🫱🏿‍🫲🏻)
+        '\\x{1FAF1}\\x{1F3FF}\\x{200D}\\x{1FAF2}\\x{1F3FC}', // E14.0  [1] (🫱🏿‍🫲🏼)
+        '\\x{1FAF1}\\x{1F3FF}\\x{200D}\\x{1FAF2}\\x{1F3FD}', // E14.0  [1] (🫱🏿‍🫲🏽)
+        '\\x{1FAF1}\\x{1F3FF}\\x{200D}\\x{1FAF2}\\x{1F3FE}', // E14.0  [1] (🫱🏿‍🫲🏾)
         '\\x{26F9}\\x{1F3FB}\\x{200D}\\x{2640}\\x{FE0F}', // E4.0   [1] (⛹🏻‍♀️)
         '\\x{26F9}\\x{1F3FB}\\x{200D}\\x{2642}\\x{FE0F}', // E4.0   [1] (⛹🏻‍♂️)
         '\\x{26F9}\\x{1F3FC}\\x{200D}\\x{2640}\\x{FE0F}', // E4.0   [1] (⛹🏼‍♀️)

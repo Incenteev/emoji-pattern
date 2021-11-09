@@ -29,6 +29,7 @@ class EmojiPatternTest extends TestCase
         yield ['✊🏽'];
         yield ['✋🏾'];
         yield ['👨‍👧‍👦'];
+        yield ['🥹'];
     }
 
     /**
