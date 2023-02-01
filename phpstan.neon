@@ -1,0 +1,15 @@
+parameters:
+    level: max
+    paths:
+        - bin/
+        - src/
+        - tests/
+    ignoreErrors:
+        - '#^Method Incenteev\\EmojiPattern\\Tests\\[^:]++\:\:test\w++\(\) has no return type specified\.$#'
+        - '#^Method Incenteev\\EmojiPattern\\Tests\\[^:]++\:\:provide\w++\(\) return type has no value type specified in iterable type iterable\.$#'
+
+includes:
+    - phar://phpstan.phar/conf/bleedingEdge.neon
+    - vendor/phpstan/phpstan-deprecation-rules/rules.neon
+    - vendor/phpstan/phpstan-phpunit/extension.neon
+    - vendor/phpstan/phpstan-phpunit/rules.neon
