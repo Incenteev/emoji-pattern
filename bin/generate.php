@@ -9,7 +9,7 @@ require __DIR__ . '/../vendor/autoload.php';
 $client = HttpClient::create();
 
 /**
- * @var array<string, ResponseInterface>
+ * @var array<string, ResponseInterface> $responses
  */
 $responses = [
     'emoji-data.txt' => $client->request('GET', 'https://www.unicode.org/Public/UCD/latest/ucd/emoji/emoji-data.txt'),
@@ -30,7 +30,11 @@ unset($emojis);
 $sequencePatterns = parseFile($responses['emoji-sequences.txt']->getContent());
 $zeroWidthJoinerSequencePatterns = parseFile($responses['emoji-zwj-sequences.txt']->getContent());
 
-if (!preg_match('#https://www\.unicode.org/Public/emoji/([^/]++)/emoji-sequences\.txt#', $responses['emoji-sequences.txt']->getInfo('url'), $match)) {
+$emojiSequencesFinalUrl = $responses['emoji-sequences.txt']->getInfo('url');
+
+assert(is_string($emojiSequencesFinalUrl));
+
+if (!preg_match('#https://www\.unicode.org/Public/emoji/([^/]++)/emoji-sequences\.txt#', $emojiSequencesFinalUrl, $match)) {
     throw new RuntimeException('Cannot extract the Emoji version from the URL: '.$responses['emoji-sequences.txt']->getInfo('url'));
 }
 
@@ -128,9 +132,7 @@ file_put_contents(__DIR__ . '/../src/EmojiPattern.php', $code);
 
 
 /**
- * @param string $fileContent
- *
- * @return array<int, array{pattern: string, property: string, comment: string, codepoints: string}>
+ * @return list<array{pattern: string, property: string, comment: string, codepoints: string}>
  */
 function parseFile(string $fileContent): array
 {
@@ -161,6 +163,8 @@ function parseFile(string $fileContent): array
 
 function buildPattern(string $unicodeRange): string {
     $parts = preg_split('/\s+/', $unicodeRange);
+
+    assert($parts !== false);
 
     $patternParts = [];
 
@@ -194,14 +198,15 @@ function hexCodeToEscape(string $hex): string
 
 /**
  * @param array{pattern: string, property: string, comment: string, codepoints: string} $emoji
- *
- * @return string
  */
 function renderArrayLine(array $emoji): string
 {
     return var_export($emoji['pattern'], true) . ', // ' . $emoji['comment'];
 }
 
+/**
+ * @param array<array{pattern: string, property: string, comment: string, codepoints: string}> $patterns
+ */
 function renderPatternLines(array $patterns): string
 {
     return implode("\n        ", array_map('renderArrayLine', $patterns));
