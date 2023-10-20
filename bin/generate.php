@@ -30,12 +30,8 @@ unset($emojis);
 $sequencePatterns = parseFile($responses['emoji-sequences.txt']->getContent());
 $zeroWidthJoinerSequencePatterns = parseFile($responses['emoji-zwj-sequences.txt']->getContent());
 
-$emojiSequencesFinalUrl = $responses['emoji-sequences.txt']->getInfo('url');
-
-assert(is_string($emojiSequencesFinalUrl));
-
-if (!preg_match('#https://www\.unicode.org/Public/emoji/([^/]++)/emoji-sequences\.txt#', $emojiSequencesFinalUrl, $match)) {
-    throw new RuntimeException('Cannot extract the Emoji version from the URL: '.$responses['emoji-sequences.txt']->getInfo('url'));
+if (!preg_match('/# Version: ([\d.]+)/', $responses['emoji-sequences.txt']->getContent(), $match)) {
+    throw new RuntimeException('Cannot extract the Emoji version from the file emoji-sequences.txt');
 }
 
 $emojiVersion = $match[1];
