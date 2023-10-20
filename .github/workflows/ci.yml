@@ -9,22 +9,22 @@ jobs:
         name: Check composer.json
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
             - uses: shivammathur/setup-php@v2
               with:
                   coverage: none
-                  php-version: '8.1'
+                  php-version: '8.2'
             - run: composer validate --strict --no-check-lock
 
     static_analysis:
         name: Static analysis
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
             - uses: shivammathur/setup-php@v2
               with:
                   coverage: none
-                  php-version: '8.1'
+                  php-version: '8.2'
             - name: Install dependencies
               run: composer update --ansi --no-progress --prefer-dist --no-interaction
             - run: vendor/bin/phpstan analyze
@@ -50,7 +50,7 @@ jobs:
                       composer_flags: '--prefer-lowest'
 
         steps:
-            -   uses: actions/checkout@v3
+            -   uses: actions/checkout@v4
             -   uses: shivammathur/setup-php@v2
                 with:
                     coverage: "none"
