@@ -5,7 +5,7 @@ namespace Incenteev\EmojiPattern;
 /**
  * Pattern for matching emojis
  *
- * This file is generated from Unicode Emoji 15.1.
+ * This file is generated from Unicode Emoji 16.0.
  */
 final class EmojiPattern
 {
@@ -381,6 +381,8 @@ final class EmojiPattern
         '[\\x{1FA80}-\\x{1FA82}]', // E12.0  [3] (🪀..🪂)    yo-yo..parachute
         '[\\x{1FA83}-\\x{1FA86}]', // E13.0  [4] (🪃..🪆)    boomerang..nesting dolls
         '[\\x{1FA87}-\\x{1FA88}]', // E15.0  [2] (🪇..🪈)    maracas..flute
+        '\\x{1FA89}', // E16.0  [1] (🪉)       harp
+        '\\x{1FA8F}', // E16.0  [1] (🪏)       shovel
         '[\\x{1FA90}-\\x{1FA95}]', // E12.0  [6] (🪐..🪕)    ringed planet..banjo
         '[\\x{1FA96}-\\x{1FAA8}]', // E13.0 [19] (🪖..🪨)    military helmet..rock
         '[\\x{1FAA9}-\\x{1FAAC}]', // E14.0  [4] (🪩..🪬)    mirror ball..hamsa
@@ -388,15 +390,20 @@ final class EmojiPattern
         '[\\x{1FAB0}-\\x{1FAB6}]', // E13.0  [7] (🪰..🪶)    fly..feather
         '[\\x{1FAB7}-\\x{1FABA}]', // E14.0  [4] (🪷..🪺)    lotus..nest with eggs
         '[\\x{1FABB}-\\x{1FABD}]', // E15.0  [3] (🪻..🪽)    hyacinth..wing
+        '\\x{1FABE}', // E16.0  [1] (🪾)       leafless tree
         '\\x{1FABF}', // E15.0  [1] (🪿)       goose
         '[\\x{1FAC0}-\\x{1FAC2}]', // E13.0  [3] (🫀..🫂)    anatomical heart..people hugging
         '[\\x{1FAC3}-\\x{1FAC5}]', // E14.0  [3] (🫃..🫅)    pregnant man..person with crown
+        '\\x{1FAC6}', // E16.0  [1] (🫆)       fingerprint
         '[\\x{1FACE}-\\x{1FACF}]', // E15.0  [2] (🫎..🫏)    moose..donkey
         '[\\x{1FAD0}-\\x{1FAD6}]', // E13.0  [7] (🫐..🫖)    blueberries..teapot
         '[\\x{1FAD7}-\\x{1FAD9}]', // E14.0  [3] (🫗..🫙)    pouring liquid..jar
         '[\\x{1FADA}-\\x{1FADB}]', // E15.0  [2] (🫚..🫛)    ginger root..pea pod
+        '\\x{1FADC}', // E16.0  [1] (🫜)       root vegetable
+        '\\x{1FADF}', // E16.0  [1] (🫟)       splatter
         '[\\x{1FAE0}-\\x{1FAE7}]', // E14.0  [8] (🫠..🫧)    melting face..bubbles
         '\\x{1FAE8}', // E15.0  [1] (🫨)       shaking face
+        '\\x{1FAE9}', // E16.0  [1] (🫩)       face with bags under eyes
         '[\\x{1FAF0}-\\x{1FAF6}]', // E14.0  [7] (🫰..🫶)    hand with index finger and thumb crossed..heart hands
         '[\\x{1FAF7}-\\x{1FAF8}]', // E15.0  [2] (🫷..🫸)    leftwards pushing hand..rightwards pushing hand
         '[\\x{231A}-\\x{231B}]', // E0.6   [2] (⌚..⌛)    watch..hourglass done
@@ -511,6 +518,7 @@ final class EmojiPattern
         '\\x{1F1E8}\\x{1F1F3}', // E0.6   [1] (🇨🇳)
         '\\x{1F1E8}\\x{1F1F4}', // E2.0   [1] (🇨🇴)
         '\\x{1F1E8}\\x{1F1F5}', // E2.0   [1] (🇨🇵)
+        '\\x{1F1E8}\\x{1F1F6}', // E16.0  [1] (🇨🇶)
         '\\x{1F1E8}\\x{1F1F7}', // E2.0   [1] (🇨🇷)
         '\\x{1F1E8}\\x{1F1FA}', // E2.0   [1] (🇨🇺)
         '\\x{1F1E8}\\x{1F1FB}', // E2.0   [1] (🇨🇻)
@@ -1804,6 +1812,8 @@ final class EmojiPattern
         '[\\x{1FA80}-\\x{1FA82}]', // E12.0  [3] (🪀..🪂)
         '[\\x{1FA83}-\\x{1FA86}]', // E13.0  [4] (🪃..🪆)
         '[\\x{1FA87}-\\x{1FA88}]', // E15.0  [2] (🪇..🪈)
+        '\\x{1FA89}', // E16.0  [1] (🪉)
+        '\\x{1FA8F}', // E16.0  [1] (🪏)
         '[\\x{1FA90}-\\x{1FA95}]', // E12.0  [6] (🪐..🪕)
         '[\\x{1FA96}-\\x{1FAA8}]', // E13.0 [19] (🪖..🪨)
         '[\\x{1FAA9}-\\x{1FAAC}]', // E14.0  [4] (🪩..🪬)
@@ -1811,15 +1821,20 @@ final class EmojiPattern
         '[\\x{1FAB0}-\\x{1FAB6}]', // E13.0  [7] (🪰..🪶)
         '[\\x{1FAB7}-\\x{1FABA}]', // E14.0  [4] (🪷..🪺)
         '[\\x{1FABB}-\\x{1FABD}]', // E15.0  [3] (🪻..🪽)
+        '\\x{1FABE}', // E16.0  [1] (🪾)
         '\\x{1FABF}', // E15.0  [1] (🪿)
         '[\\x{1FAC0}-\\x{1FAC2}]', // E13.0  [3] (🫀..🫂)
         '[\\x{1FAC3}-\\x{1FAC5}]', // E14.0  [3] (🫃..🫅)
+        '\\x{1FAC6}', // E16.0  [1] (🫆)
         '[\\x{1FACE}-\\x{1FACF}]', // E15.0  [2] (🫎..🫏)
         '[\\x{1FAD0}-\\x{1FAD6}]', // E13.0  [7] (🫐..🫖)
         '[\\x{1FAD7}-\\x{1FAD9}]', // E14.0  [3] (🫗..🫙)
         '[\\x{1FADA}-\\x{1FADB}]', // E15.0  [2] (🫚..🫛)
+        '\\x{1FADC}', // E16.0  [1] (🫜)
+        '\\x{1FADF}', // E16.0  [1] (🫟)
         '[\\x{1FAE0}-\\x{1FAE7}]', // E14.0  [8] (🫠..🫧)
         '\\x{1FAE8}', // E15.0  [1] (🫨)
+        '\\x{1FAE9}', // E16.0  [1] (🫩)
         '[\\x{1FAF0}-\\x{1FAF6}]', // E14.0  [7] (🫰..🫶)
         '[\\x{1FAF7}-\\x{1FAF8}]', // E15.0  [2] (🫷..🫸)
         '[\\x{231A}-\\x{231B}]', // E0.6   [2] (⌚..⌛)
